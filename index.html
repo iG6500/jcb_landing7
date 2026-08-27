@@ -6,8 +6,8 @@
 <meta name="color-scheme" content="only light">
 <meta name="supported-color-schemes" content="light">
 <script data-goatcounter="https://cs-kuhn-kisopro.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-<title>KUHN Gépkiárusítás | Chemical-Seed</title>
-<meta name="description" content="KUHN gépek kiárusítása a Chemical-Seednél – kaszák, vetőgépek, talajművelő és rendkezelő gépek elérhető készletről. Kérjen ajánlatot még ma!">
+<title>KUHN Raktárnullázás | Chemical Seed</title>
+<meta name="description" content="KUHN Raktárnullázás – amit most nem visznek el, azt már nem ezen az áron adjuk. Kaszák, vetőgépek, talajművelő gépek a készlet erejéig. Kérjen ajánlatot!">
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -17,11 +17,11 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://akciochemicalseed.hu/kuhn/">
-<meta property="og:title" content="KUHN Gépkiárusítás | Chemical-Seed">
-<meta property="og:description" content="KUHN gépek elérhető készletről – kaszák, vetőgépek, talajművelő gépek. Kérjen ajánlatot még ma!">
+<meta property="og:title" content="KUHN Raktárnullázás | Chemical Seed">
+<meta property="og:description" content="Amit most nem visznek el, azt már nem ezen az áron adjuk. KUHN gépek a készlet erejéig.">
 <meta property="og:image" content="https://akciochemicalseed.hu/kuhn-og.jpg">
 <meta property="og:locale" content="hu_HU">
-<meta property="og:site_name" content="Chemical-Seed">
+<meta property="og:site_name" content="Chemical Seed">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,9 +60,13 @@ img{max-width:100%;display:block}
 .nav-cta:hover{background:var(--grad-brand);color:var(--ink)}
 
 /* HERO */
-.hero{position:relative;padding:70px 0 50px;overflow:hidden;background:radial-gradient(ellipse 75% 55% at 50% -12%,rgba(227,0,15,.13),transparent 62%)}
+.hero{position:relative;padding:64px 0 0;overflow:hidden;background:radial-gradient(ellipse 75% 55% at 50% -12%,rgba(227,0,15,.13),transparent 62%)}
+.hero-photo{position:relative;margin:44px calc(50% - 50vw) 0;height:clamp(260px,42vw,480px);overflow:hidden}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(244,244,242,.92) 100%)}
+.hero-photo .caption{position:absolute;left:24px;bottom:22px;z-index:2;font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--white);background:rgba(227,0,15,.92);padding:8px 16px}
 .hero-kicker{text-align:center;font-family:'Michroma',sans-serif;font-size:clamp(.7rem,1.6vw,.92rem);letter-spacing:.5em;text-transform:uppercase;color:var(--kuhn-deep);margin-bottom:14px}
-.hero-giant{text-align:center;font-family:'Archivo Black',sans-serif;font-size:clamp(3.4rem,15vw,12rem);line-height:.88;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+.hero-giant{text-align:center;font-family:'Archivo Black',sans-serif;font-size:clamp(2.6rem,10vw,7.6rem);line-height:.86;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
 .hero-giant .solid{background:var(--grad-kuhn);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero-sub{text-align:center;max-width:640px;margin:26px auto 0;color:var(--ink-soft);font-size:1.05rem}
 .hero-sub strong{color:var(--ink)}
@@ -81,6 +85,12 @@ img{max-width:100%;display:block}
 .section-title{font-family:'Michroma',sans-serif;font-size:clamp(1.3rem,3.6vw,2.1rem);letter-spacing:.32em;text-transform:uppercase;position:relative;padding-bottom:20px}
 .section-title::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:64px;height:3px;background:var(--grad-kuhn)}
 .cat-head p{color:var(--ink-dim);margin-top:16px}
+/* Fogyás-sáv */
+.stock-bar{max-width:640px;margin:28px auto 0}
+.stock-bar .track{height:8px;background:var(--bg-alt);border:1px solid var(--line);overflow:hidden}
+.stock-bar .fill{height:100%;background:var(--grad-kuhn);width:0;transition:width .8s ease}
+.stock-bar .legend{display:flex;justify-content:space-between;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink-dim)}
+.stock-bar .legend b{color:var(--kuhn-deep)}
 
 /* SZŰRŐ */
 .filters{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:flex-start;margin-bottom:34px;padding:20px 24px;background:var(--white);border:1px solid var(--line)}
@@ -185,24 +195,28 @@ footer .logo b{color:var(--accent-deep);font-weight:400}
 
 <nav class="nav">
   <div class="nav-inner">
-    <a href="https://akciochemicalseed.hu/" class="logo">Chemical-<b>Seed</b></a>
+    <a href="https://akciochemicalseed.hu/" class="logo">Chemical <b>Seed</b></a>
     <a href="#ajanlatkeres" class="nav-cta">Ajánlatot kérek</a>
   </div>
 </nav>
 
 <header class="hero">
   <div class="container">
-    <div class="hero-kicker">Gépkiárusítás &middot; Elérhető készletről</div>
-    <div class="hero-giant"><span class="solid">KUHN</span></div>
-    <p class="hero-sub">Elérhető KUHN gépeink egy helyen — kaszák, vetőgépek, talajművelő és rendkezelő gépek. <strong>Új és demó gépek</strong>, azonnal lehívható készletről. Válaszd ki, ami érdekel, és kérj rá ajánlatot.</p>
+    <div class="hero-kicker">KUHN &middot; Egyszeri alkalom</div>
+    <div class="hero-giant"><span class="solid">RAKTÁR</span><br>NULLÁZÁS</div>
+    <p class="hero-sub">Nullára visszük a KUHN raktárkészletet. Ezek a gépek most, <strong>ezen az áron, egyszer</strong> mennek el — amit nem visznek el, azt már a következő árlistán találod meg. Nincs ismétlés, nincs hosszabbítás.</p>
     <div class="hero-actions">
-      <a href="#katalogus" class="btn-primary">Gépek megtekintése</a>
+      <a href="#katalogus" class="btn-primary">Megnézem a gépeket</a>
     </div>
     <div class="hero-stats">
-      <div class="hs-box"><div class="num">37</div><div class="lbl">elérhető gép</div></div>
-      <div class="hs-box"><div class="num">6</div><div class="lbl">géptípus</div></div>
-      <div class="hs-box"><div class="num">KUHN</div><div class="lbl">gyári gépek</div></div>
+      <div class="hs-box"><div class="num" id="statElerheto">--</div><div class="lbl">még elérhető</div></div>
+      <div class="hs-box"><div class="num" id="statElkelt">--</div><div class="lbl">már elkelt</div></div>
+      <div class="hs-box"><div class="num">0</div><div class="lbl">a cél a raktárban</div></div>
     </div>
+  </div>
+  <div class="hero-photo">
+    <img src="kuhn-hero.jpg" alt="KUHN gépek – raktárnullázás" loading="eager">
+    <span class="caption">A készlet erejéig &middot; utána nincs pótlás</span>
   </div>
 </header>
 
@@ -211,6 +225,13 @@ footer .logo b{color:var(--accent-deep);font-weight:400}
     <div class="cat-head">
       <h2 class="section-title">Elérhető gépek</h2>
       <p>Szűrj géptípusra. Az árral jelölt gépek azonnali ára a feltüntetett összeg — a többihez kérj ajánlatot.</p>
+      <div class="stock-bar">
+        <div class="track"><div class="fill" id="stockFill"></div></div>
+        <div class="legend">
+          <span>Elkelt: <b id="legendElkelt">0</b></span>
+          <span>Még elérhető: <b id="legendElerheto">0</b></span>
+        </div>
+      </div>
     </div>
 
     <div class="filters">
@@ -235,13 +256,13 @@ footer .logo b{color:var(--accent-deep);font-weight:400}
     <div class="info-grid">
       <div class="info-item">
         <svg class="ico" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
-        <h3>Gyári új gépek</h3>
-        <p>Új és alacsony üzemórás demó gépek, gyári minőségben.</p>
+        <h3>Egyszeri árak</h3>
+        <p>Ezek az árak a raktárnullázásra szólnak — utána a normál árlista él.</p>
       </div>
       <div class="info-item">
         <svg class="ico" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        <h3>Készletről elérhető</h3>
-        <p>A listázott gépek raktárkészletről, azonnal lehívhatók.</p>
+        <h3>Ami elfogy, nem jön vissza</h3>
+        <p>Nincs utánrendelés ezen az áron — a készlet erejéig tart.</p>
       </div>
       <div class="info-item">
         <svg class="ico" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 0 0-6 0v4"/><rect x="2" y="9" width="20" height="12" rx="2"/></svg>
@@ -262,7 +283,7 @@ footer .logo b{color:var(--accent-deep);font-weight:400}
   <div class="container">
     <div class="cat-head">
       <h2 class="section-title">Ajánlatkérés</h2>
-      <p>Töltsd ki az űrlapot, és kollégánk rövid időn belül felveszi veled a kapcsolatot a kiválasztott géppel kapcsolatban.</p>
+      <p>Jelöld be a gépet, töltsd ki az űrlapot, és kollégánk rövid időn belül keres az ajánlattal. Amíg a gép szabad, addig tartható az ár.</p>
     </div>
 
     <div class="form-wrap">
@@ -318,13 +339,13 @@ footer .logo b{color:var(--accent-deep);font-weight:400}
 <footer>
   <div class="container">
     <div class="footer-inner">
-      <div class="logo">Chemical-<b>Seed</b></div>
-      <p>&copy; 2026 Chemical-Seed Kft. &middot; Az árak a készlet erejéig, tájékoztató jellegűek.</p>
+      <div class="logo">Chemical <b>Seed</b></div>
+      <p>&copy; 2026 Chemical Seed Kft. &middot; A raktárnullázási árak a készlet erejéig érvényesek, tájékoztató jellegűek.</p>
     </div>
     <div style="margin-top:18px;padding-top:18px;border-top:1px solid #2a2a28;text-align:center;">
-      <a href="https://www.chemicalseed.hu/impresszum" target="_blank" rel="noopener" style="color:#7a7a78;font-size:.8rem;text-decoration:underline;">Impresszum</a>
+      <a href="https://www.chemicalseed.hu/impresszum.html" target="_blank" rel="noopener" style="color:#7a7a78;font-size:.8rem;text-decoration:underline;">Impresszum</a>
       <span style="color:#3a3a38;margin:0 10px;">&middot;</span>
-      <a href="https://www.chemicalseed.hu/adatvedelmi-tajekoztato" target="_blank" rel="noopener" style="color:#7a7a78;font-size:.8rem;text-decoration:underline;">Adatkezelési tájékoztató</a>
+      <a href="https://www.chemicalseed.hu/adatvedelmi-tajekoztato.html" target="_blank" rel="noopener" style="color:#7a7a78;font-size:.8rem;text-decoration:underline;">Adatkezelési tájékoztató</a>
     </div>
   </div>
 </footer>
@@ -497,8 +518,25 @@ document.getElementById('smClear').addEventListener('click', function(){
   });
 })();
 
+/* ===== KÉSZLET-SZÁMLÁLÓK ===== */
+function updateStockCounters(){
+  var osszes = MACHINES.length;
+  var elkelt = MACHINES.filter(function(m){ return ELADOTT.indexOf(m.alvaz) > -1; }).length;
+  var elerheto = osszes - elkelt;
+
+  var setTxt = function(id, val){ var el = document.getElementById(id); if(el) el.textContent = val; };
+  setTxt('statElerheto', elerheto);
+  setTxt('statElkelt', elkelt);
+  setTxt('legendElkelt', elkelt);
+  setTxt('legendElerheto', elerheto);
+
+  var fill = document.getElementById('stockFill');
+  if(fill) setTimeout(function(){ fill.style.width = Math.round(elkelt/osszes*100) + '%'; }, 250);
+}
+
 /* Init */
 renderCards(MACHINES);
+updateStockCounters();
 </script>
 </body>
 </html>
