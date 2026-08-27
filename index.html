@@ -329,11 +329,10 @@ footer .logo b{color:var(--accent-deep);font-weight:400}
           <label for="mce-MMERGE7">Cég</label>
           <input type="text" name="MMERGE7" id="mce-MMERGE7" autocomplete="organization">
         </div>
-        <!-- A kiválasztott gép ide kerül; a pontos merge field a friss embed alapján lesz bekötve -->
-        <input type="hidden" name="ERDEKLODES_GEP" id="mce-ERDEKLODES">
+        <input type="hidden" name="MMERGE21" id="mce-MMERGE21">
         <div class="form-group full">
-          <label for="mce-MESSAGE">Megjegyzés</label>
-          <textarea name="MESSAGE" id="mce-MESSAGE" placeholder="Pl. mikorra tervezed a beruházást, van-e beszámítandó géped..."></textarea>
+          <label for="mce-MMERGE22">Megjegyzés</label>
+          <textarea name="MMERGE22" id="mce-MMERGE22" placeholder="Pl. mikorra tervezed a beruházást, van-e beszámítandó géped..."></textarea>
         </div>
         <div class="gdpr-row">
           <input type="checkbox" id="gdpr" required>
@@ -366,7 +365,7 @@ footer .logo b{color:var(--accent-deep);font-weight:400}
    Ide másold be az eladott gép ALVÁZSZÁMÁT idézőjelben, vesszővel elválasztva.
    Peldaul: ELADOTT = ["KSAA1080C40A00043", "KHUA1048J40A00047"];
    Ures lista = nincs eladott gep. */
-var ELADOTT = [ ];
+var ELADOTT = [" "];
 
 var MACHINES = [{"nev": "KUHN - ESPRO 6000 R", "alvaz": "KSAA1044H80E00518", "allapot": "Új", "ar": null, "kat": "Vetőgép"}, {"nev": "KUHN - ESPRO 6002 R", "alvaz": "KSAA1080C40A00043", "allapot": "Új", "ar": "31 990 000 Ft", "kat": "Vetőgép"}, {"nev": "KUHN - ESPRO 4002 R", "alvaz": "KSAA1080P30A00027", "allapot": "Új", "ar": null, "kat": "Vetőgép"}, {"nev": "KUHN - MAXIMA 3 TS E 950 (6 soros)", "alvaz": "KHUA1032V90C00143", "allapot": "Új", "ar": null, "kat": "Vetőgép"}, {"nev": "KUHN - MAXIMA 3 TS E 950 (6 soros)", "alvaz": "KHUA1032A90C00144", "allapot": "Új", "ar": null, "kat": "Vetőgép"}, {"nev": "KUHN - PERFORMER 3000 SELECT", "alvaz": "KHUA1080E80A00018", "allapot": "Új", "ar": null, "kat": "Talajművelés"}, {"nev": "KUHN - PERFORMER 3000 SELECT", "alvaz": "KHUA1080T80A00006", "allapot": "Demo 50ha", "ar": "15 700 000 Ft", "kat": "Talajművelés"}, {"nev": "KUHN - MAXIMA 3 TS (6 soros)", "alvaz": "KHUA1031E90E00517", "allapot": "Új", "ar": "12 700 000 Ft", "kat": "Vetőgép"}, {"nev": "KUHN - KOSMA TS (6 soros)", "alvaz": "KHUA1043A00B00264", "allapot": "Új", "ar": null, "kat": "Vetőgép"}, {"nev": "KUHN - KOSMA TS (6 soros)", "alvaz": "KHUA1043C00B00293", "allapot": "Új", "ar": null, "kat": "Vetőgép"}, {"nev": "KUHN - OPTIMER L 7500", "alvaz": "KHUA1048H40A00203", "allapot": "Új", "ar": null, "kat": "Talajművelés"}, {"nev": "KUHN - OPTIMER L 6000", "alvaz": "KHUA1048J40A00047", "allapot": "Új", "ar": "21 500 000 Ft", "kat": "Talajművelés"}, {"nev": "KUHN - CULTIMER 6000", "alvaz": "KHUA1022A40D00206", "allapot": "Új", "ar": null, "kat": "Talajművelés"}, {"nev": "KUHN - PROLANDER 6000", "alvaz": "KH2A1024E00C00521", "allapot": "Új", "ar": "14 990 000 Ft", "kat": "Talajművelés"}, {"nev": "KUHN - CULTIMER 4000", "alvaz": "KHUA1022V40D00172", "allapot": "Új", "ar": null, "kat": "Talajművelés"}, {"nev": "KUHN - FC 3561 TCR", "alvaz": "KSAA1022A10A00138", "allapot": "Új", "ar": null, "kat": "Kasza"}, {"nev": "KUHN - FC 3561 TCR", "alvaz": "KSAA1022A10A00141", "allapot": "Új", "ar": "11 600 000 Ft", "kat": "Kasza"}, {"nev": "KUHN - GMD 9530 FF", "alvaz": "KSAA1044E20F01227", "allapot": "Új", "ar": "13 900 000 Ft", "kat": "Kasza"}, {"nev": "KUHN - PRIMOR 5570M", "alvaz": "KAUA1028K20D00424", "allapot": "Új", "ar": "12 400 000 Ft", "kat": "Etető / bálabontó"}, {"nev": "KUHN - PRIMOR 5570M", "alvaz": "KAUA1028V20D00430", "allapot": "Új", "ar": null, "kat": "Etető / bálabontó"}, {"nev": "KUHN - FC 3115 R-FF", "alvaz": "KSAA1072T70B00054", "allapot": "Új", "ar": null, "kat": "Kasza"}, {"nev": "KUHN - GA 6930", "alvaz": "KSAA1009C70A00395", "allapot": "Demo 5ha", "ar": "9 300 000 Ft", "kat": "Rendkezelés"}, {"nev": "KUHN - FC 3115 R-FF", "alvaz": "KSAA1006K60F00159", "allapot": "Új", "ar": null, "kat": "Kasza"}, {"nev": "KUHN - Axis 40.2 H-EMC-W", "alvaz": "09-076702", "allapot": "Új", "ar": "9 800 000 Ft", "kat": "Műtrágyaszóró"}, {"nev": "KUHN - GA 7501+", "alvaz": "KSAA1015H70F03403", "allapot": "Új", "ar": "8 650 000 Ft", "kat": "Rendkezelés"}, {"nev": "KUHN - RW 1610 C", "alvaz": "KNLA1003K80E00149", "allapot": "Új", "ar": null, "kat": "Rendkezelés"}, {"nev": "KUHN - GMD 3123 F-FF", "alvaz": "KSAA1009C20E01695", "allapot": "Új", "ar": "5 100 000 Ft", "kat": "Kasza"}, {"nev": "KUHN - GMD 315-FF", "alvaz": "KSAA1046C80D01475", "allapot": "Új", "ar": null, "kat": "Kasza"}, {"nev": "KUHN - GA 5031", "alvaz": "KSAA1014C30C00495", "allapot": "Új", "ar": null, "kat": "Rendkezelés"}, {"nev": "KUHN - GMD 310-FF", "alvaz": "KSAA1025T80D17459", "allapot": "Új", "ar": null, "kat": "Kasza"}, {"nev": "KUHN - GMD 310-FF", "alvaz": "KSAA1025L80D17598", "allapot": "Új", "ar": null, "kat": "Kasza"}, {"nev": "KUHN - GMD 280-FF", "alvaz": "KSAA1025T80D15971", "allapot": "Új", "ar": null, "kat": "Kasza"}, {"nev": "KUHN - GMD 240-FF", "alvaz": "KSAA1025V80D15654", "allapot": "Új", "ar": null, "kat": "Kasza"}, {"nev": "KUHN - GMD 240-FF", "alvaz": "KSAA1025A80D15655", "allapot": "Új", "ar": null, "kat": "Kasza"}, {"nev": "KUHN - MDS 20.2Q", "alvaz": "65-022136", "allapot": "Új", "ar": null, "kat": "Műtrágyaszóró"}, {"nev": "KUHN - GF 502", "alvaz": "KSAA1018P50B01944", "allapot": "Új", "ar": null, "kat": "Rendkezelés"}, {"nev": "KUHN - GMD 24", "alvaz": "KSAA1025K70B03024", "allapot": "Új", "ar": null, "kat": "Kasza"}];
 
@@ -463,7 +462,7 @@ document.getElementById('filterTags').addEventListener('click', function(e){
 /* ===== GÉP KIVÁLASZTÁSA ===== */
 var selMachine = document.getElementById('selectedMachine');
 var smName = document.getElementById('smName');
-var erdeklodesInput = document.getElementById('mce-ERDEKLODES');
+var erdeklodesInput = document.getElementById('mce-MMERGE21');
 
 function selectMachine(nev, vin){
   var label = nev + ' (' + vin + ')';
@@ -483,9 +482,8 @@ document.getElementById('smClear').addEventListener('click', function(){
   var form = document.getElementById('reg-form');
   var btn = document.getElementById('submit-btn');
   var resp = document.getElementById('form-response');
-  // FIGYELEM: ez a placeholder URL – a friss embed kód alapján frissítendő (u, id, f_id, merge field)
-  var MC_URL = 'https://xtratech.us18.list-manage.com/subscribe/post-json?u=859ff0560bf14ca6c051f7f8e&id=4774a6baa8&f_id=0015abe6f0';
-  var MC_TAG = ''; // ide jön a KUHN kampány tag, ha lesz
+  var MC_URL = 'https://xtratech.us18.list-manage.com/subscribe/post-json?u=859ff0560bf14ca6c051f7f8e&id=4774a6baa8&f_id=0037abe6f0';
+  var MC_TAG = '3055907'; // KUHN Raktárnullázás kampány tag
 
   function showResponse(type, msg){
     resp.className = 'form-response ' + type;
@@ -508,14 +506,12 @@ document.getElementById('smClear').addEventListener('click', function(){
     btn.disabled = true; btn.textContent = 'Küldés...';
 
     var params = [];
-    ['LNAME','FNAME','EMAIL','PHONE','MMERGE8','MMERGE7'].forEach(function(f){
+    ['LNAME','FNAME','EMAIL','PHONE','MMERGE8','MMERGE7','MMERGE21','MMERGE22'].forEach(function(f){
       var el = form.querySelector('[name="'+f+'"]');
       if(el) params.push(f + '=' + encodeURIComponent(el.value.trim()));
     });
     params.push('MMERGE11=' + encodeURIComponent('Igen'));
     if(MC_TAG) params.push('tags=' + encodeURIComponent(MC_TAG));
-    // a kiválasztott gép – a friss embed merge fieldjéhez igazítandó (pl. MMERGE13 vagy dedikált mező)
-    if(erdeklodesInput.value) params.push('ERDEKLODES=' + encodeURIComponent(erdeklodesInput.value));
     params.push('b_859ff0560bf14ca6c051f7f8e_4774a6baa8=');
 
     var cbName = 'mcCallback_' + Date.now();
