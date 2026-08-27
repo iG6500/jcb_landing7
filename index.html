@@ -403,8 +403,8 @@ function renderCards(list){
   }
   list.forEach(function(m){
     var priceHtml = m.ar
-      ? '<span class="plabel">Ár</span><span class="pvalue">'+m.ar+'</span>'
-      : '<span class="plabel">Ár</span><span class="pvalue ask">Ajánlatot kérek</span>';
+      ? '<span class="plabel">Ár + ÁFA</span><span class="pvalue">'+m.ar+'</span>'
+      : '<span class="plabel">Ár + ÁFA</span><span class="pvalue ask">Ajánlatot kérek</span>';
     var eladva = ELADOTT.indexOf(m.alvaz) > -1;
     var card = document.createElement('div');
     card.className = 'machine-card' + (eladva ? ' sold' : '');
