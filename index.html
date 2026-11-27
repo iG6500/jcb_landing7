@@ -447,7 +447,31 @@ function applyFilters(){
   var filtered = MACHINES.filter(function(m){
     return activeKat === 'all' || m.kat === activeKat;
   });
-  renderCards(filtered);
+  renderCards(sortByImage(filtered));
+}
+
+/* ===== KÉPPEL RENDELKEZŐ GÉPEK ELŐRE ===== */
+var HAS_IMG = {};
+function sortByImage(list){
+  return list.map(function(m,i){ return {m:m,i:i}; })
+    .sort(function(a,b){
+      var ia = HAS_IMG[slug(a.m.nev)] ? 0 : 1, ib = HAS_IMG[slug(b.m.nev)] ? 0 : 1;
+      return ia - ib || a.i - b.i;
+    })
+    .map(function(x){ return x.m; });
+}
+function probeImages(done){
+  var slugs = [];
+  MACHINES.forEach(function(m){ var s = slug(m.nev); if(slugs.indexOf(s) < 0) slugs.push(s); });
+  var left = slugs.length, finished = false;
+  function finish(){ if(!finished){ finished = true; done(); } }
+  slugs.forEach(function(s){
+    var im = new Image();
+    im.onload = function(){ HAS_IMG[s] = true; if(--left === 0) finish(); };
+    im.onerror = function(){ if(--left === 0) finish(); };
+    im.src = 'gepek/' + s + '.jpg';
+  });
+  setTimeout(finish, 2500); // ha lassú a hálózat, ne várjunk tovább
 }
 
 document.getElementById('filterTags').addEventListener('click', function(e){
@@ -555,7 +579,7 @@ function updateStockCounters(){
 }
 
 /* Init */
-renderCards(MACHINES);
+probeImages(applyFilters);
 updateStockCounters();
 </script>
 </body>
